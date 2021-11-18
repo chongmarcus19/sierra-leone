@@ -10,4 +10,4 @@ King Minos has thrown you into his infamous Labyrinth where you are left to be e
 <img src="screenshots/Screen Shot 2021-11-18 at 1.49.56 PM.png" height="350px" width="950pxpx">
 <img src="screenshots/Screen Shot 2021-11-18 at 1.47.11 PM.png" height="200px" width="950pxpx">
 <img src="screenshots/Screen Shot 2021-11-18 at 1.47.49 PM.png" height="250px" width="950pxpx">
-<img src="screenshots/Screen Shot 2021-11-18 at 1.53.19 PM.png" height="250px" width="950pxpx">
+<img src="screenshots/Screen Shot 2021-11-18 at 1.53.19 PM.png" height="350px" width="950pxpx">
