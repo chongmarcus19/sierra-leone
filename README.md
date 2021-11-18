@@ -1,6 +1,10 @@
 # Liberation_Minotaur
-An interactive maze and survival game inspired by the Greek tale of Theseus and the Minotaur utilizing object-oriented programming in C++
+An interactive maze and survival game inspired by the Greek tale of Theseus and the Minotaur utilizing object-oriented programming in C++.
 
+## How to Play
+Run the driver file in an ide and play the game through the terminal.
+
+## The Game
 The player's goal is to reach the end of the maze. Every turn a two dimensional map will be outputted to indicate your progress through the map. Items and enemies are randomly generated every room. Items will either aid your hunger points or they can allow you to traverse through the map at a higher rate. Enemies will vary in difficulty. You can either run or fight them. Choose wisely!
 
 ### Snaps
