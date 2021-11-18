@@ -392,12 +392,6 @@ while (choice != "6")
             trigger2 = 1;
         }
         
-        else
-        {
-            // user error
-            cout << "not an option" << endl;
-        }
-        
         }
         
         cout << "" << endl;
