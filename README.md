@@ -1,4 +1,4 @@
-# Liberation_Minotaur
+# Liberation Minotaur
 An interactive maze and survival game inspired by the Greek tale of Theseus and the Minotaur utilizing object-oriented programming in C++
 
 ## How to Play
