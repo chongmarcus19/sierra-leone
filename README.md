@@ -11,7 +11,7 @@ Run the driver file in an ide and play the game through the terminal
 - Items will either aid your hunger points or they will allow you to traverse through the map at a higher rate 
 - Enemies will vary in difficulty. You can either run or fight them. Choose wisely!
 - Watch your hunger points and health points! Your hunger will deterioirate every turn and your health will deteriorate after fighting enemies!
-- Most of all, do not let the Minotaur catch you! Always beware of it...
+- Most of all, do not let the Minotaur catch you!
 
 Enjoy!
 
