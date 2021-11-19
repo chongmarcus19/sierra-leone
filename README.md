@@ -18,7 +18,7 @@ Enjoy!
 ### Snaps
 
 <img src="screenshots/Screen Shot 2021-11-18 at 1.44.29 PM.png" height="400px" width="1100px">
-<img src="screenshots/Screen Shot 2021-11-18 at 1.49.56 PM.png" height="500px" width="1100px">
+<img src="screenshots/Screen Shot 2021-11-18 at 1.49.56 PM.png" height="400px" width="1100px">
 <img src="screenshots/Screen Shot 2021-11-18 at 1.49.07 PM.png" height="250px" width="1100px">
 <img src="screenshots/Screen Shot 2021-11-18 at 2.08.21 PM.png" height="300px" width="1100px">
 <img src="screenshots/Screen Shot 2021-11-18 at 1.47.11 PM.png" height="200px" width="1100px">
