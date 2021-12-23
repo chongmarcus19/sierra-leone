@@ -110,4 +110,6 @@ int Enemy::encounter()
         
         }
     }
+
+    return -1;
 }

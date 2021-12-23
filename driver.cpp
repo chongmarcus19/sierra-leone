@@ -83,7 +83,7 @@ while (choice != "6")
         break;
     }
     
-    // made it to end of maze or retrieved Theses' sword
+    // made it to end of maze
     if (l.getProgress() >= 100)
     {
         cout << "YOU HAVE BEATEN THE ODDS AND ESCAPED THE LABYRINTH" << endl;
@@ -110,9 +110,9 @@ while (choice != "6")
     if (choice == "1")
     {
         dark = 0;
-        int trigger = 0;
+        int choiceMade = 0;
         
-        while (trigger != 1) {
+        while (choiceMade != 1) {
         cout << "Which way?" << endl;
         cout << "1. Take a left" << endl;
         cout << "2. Take a right" << endl;
@@ -126,9 +126,9 @@ while (choice != "6")
         {
             if (x > 60 && x <= 100)
             {
-                int monsta = e.encounter();
+                int monster = e.encounter();
                 
-                if (monsta == 11)
+                if (monster == 11)
                 {
                     cout << "you have slain the goblin!" << endl;
                     
@@ -154,13 +154,13 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta == 12)
+                if (monster == 12)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 5);
                 }
                 
-                if (monsta == 21)
+                if (monster == 21)
                 {
                     cout << "you have slain the gorgon!" << endl;
                     
@@ -186,13 +186,13 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta == 22)
+                if (monster == 22)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 10);
                 }
                 
-                if (monsta == 31)
+                if (monster == 31)
                 {
                     cout << "you have slain the cyclops!" << endl;
                     
@@ -218,7 +218,7 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta == 32)
+                if (monster == 32)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 15);
@@ -231,16 +231,16 @@ while (choice != "6")
                 dark = 1;
             }
             
-            trigger = 1;
+            choiceMade = 1;
         }
         
         if (direction == "2")
         {
             if (x > 80 && x <= 100)
             {
-                int monsta2 = e.encounter();
+                int monster2 = e.encounter();
                 
-                if (monsta2 == 11)
+                if (monster2 == 11)
                 {
                     cout << "you have slain the goblin!" << endl;
                     if (l.getItems(2) == 0)
@@ -264,13 +264,13 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta2 == 12)
+                if (monster2 == 12)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 5);
                 }
                 
-                if (monsta2 == 21)
+                if (monster2 == 21)
                 {
                     cout << "you have slain the gorgon!" << endl;
                     if (l.getItems(2) == 0)
@@ -294,13 +294,13 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta2 == 22)
+                if (monster2 == 22)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 10);
                 }
                 
-                if (monsta2 == 31)
+                if (monster2 == 31)
                 {
                     cout << "you have slain the cyclops!" << endl;
                     if (l.getItems(2) == 0)
@@ -324,7 +324,7 @@ while (choice != "6")
                     }
                 }
                 
-                if (monsta2 == 32)
+                if (monster2 == 32)
                 {
                     cout << "Successfully ran away" << endl;
                     l.setHunger(l.getHunger() - 15);
@@ -336,7 +336,7 @@ while (choice != "6")
                 int dark = 1;
             }
             
-            trigger = 1;
+            choiceMade = 1;
         }
         
         }
@@ -422,19 +422,19 @@ while (choice != "6")
             
         cin >> eatChoice;
             
-        int manz = l.eat(eatChoice);
+        int eatObj = l.eat(eatChoice);
             
-        if (manz == 0)
+        if (eatObj == 0)
         {
             cout << "You do not have any bread" << endl;
         }
 
-        if (manz == 2)
+        if (eatObj == 2)
         {
             cout << "You do not have enough bread" << endl;
         }
             
-        else if (manz == 1)
+        else if (eatObj == 1)
         {
             cout << "" << endl;
             cout << "Bread successfully consumed" << endl;
@@ -525,20 +525,19 @@ while (choice != "6")
     
     
     // minotaur speed varies and changes every turn
-    // unpredictable
-    int rando = (rand() % 11);
+    int minotaurSpeedRandom = (rand() % 11);
     
-    if (rando >= 0 && rando <= 6)
+    if (minotaurSpeedRandom >= 0 && minotaurSpeedRandom <= 6)
     {
         minotaurSpeed = 1;
     }
     
-    if (rando > 7 && rando <= 9)
+    if (minotaurSpeedRandom > 7 && minotaurSpeedRandom <= 9)
     {
         minotaurSpeed = 2;
     }
     
-    if (rando == 10)
+    if (minotaurSpeedRandom == 10)
     {
         minotaurSpeed = 3;
     }

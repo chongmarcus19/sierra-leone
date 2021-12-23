@@ -98,55 +98,55 @@ void Player::inventory()
 {
     cout << "" << endl;
     
-    int oops = 0;
+    int invetoryCur = 0;
     
-    for (int okie = 0; okie < 4; okie++)
+    for (int i = 0; i < 4; i++)
     {
-        oops = oops + getItems(okie);
+        invetoryCur = invetoryCur + getItems(i);
         
-        if (okie == 0)
+        if (i == 0)
         {
-            if (getItems(okie) != 0)
+            if (getItems(i) != 0)
             {
-                cout << getItems(okie) << " slice(s) of bread" << endl;
+                cout << getItems(i) << " slice(s) of bread" << endl;
             }
             
         }
         
-        if (okie == 1)
+        if (i == 1)
         {
-            if (getItems(okie) != 0)
+            if (getItems(i) != 0)
             {
-                cout << getItems(okie) << " candle(s)" << endl;
+                cout << getItems(i) << " candle(s)" << endl;
             }
         }
         
-        if (okie == 2)
+        if (i == 2)
         {
-            if (getItems(okie) == 1)
+            if (getItems(i) == 1)
             {
                 cout << "- Standard Blade (Power level 1)" << endl;
             }
             
-            if (getItems(okie) == 2)
+            if (getItems(i) == 2)
             {
                 cout << "- Dark Axe (Power level 2)" << endl;
             }
             
-            if (getItems(okie) == 3)
+            if (getItems(i) == 3)
             {
                 cout << "- Emerald Flail (Power level 3)" << endl;
             }
         }
         
-        if (okie == 3)
+        if (i == 3)
         {
-            if (getItems(okie) == 1)
+            if (getItems(i) == 1)
             {
                 cout << "- Combat Boots (Speed Level 2)" << endl;
             }
             
-            if (getItems(okie) == 2)
+            if (getItems(i) == 2)
             {
                 cout << "- Enchanted Boots (Speed level 2)" << endl;
             }
@@ -154,7 +154,7 @@ void Player::inventory()
         }
     }
     
-    if (oops == 0)
+    if (invetoryCur == 0)
     {
         cout << "No items in inventory" << endl;
     }
@@ -369,5 +369,5 @@ int Player::eat(int eatChoice)
     }
 
     }
-
+    return -1;
 }
