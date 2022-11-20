@@ -1,4 +1,5 @@
 #include "player.h"
+#include <iostream>
 using namespace std;
 
 Player::Player()
@@ -41,11 +42,6 @@ int Player::getHunger()
 int Player::getFood()
 {
     return food;
-}
-
-int Player::getCandles()
-{
-    return candles;
 }
 
 int Player::getProgress()
@@ -93,61 +89,116 @@ int Player::getY()
     return y;
 }
 
-// runs through items array and outputs based on value in the given index
+void Player::setTheses(string win)
+{
+    theses = win;
+}
+
+void Player::setHealth(int playerHealth)
+{
+    health = playerHealth;
+}
+
+void Player::setHunger(int playerHunger)
+{
+    hunger = playerHunger;
+}
+
+void Player::setFood(int playerFood)
+{
+    food = playerFood;
+}
+
+void Player::setProgress(int playerProgress)
+{
+    progress = playerProgress;
+}
+
+void Player::setPlayerSpeed(int s)
+{
+    playerSpeed = s;
+}
+
+void Player::setPlayerPower(int p)
+{
+    playerPower = p;
+}
+
+void Player::setSpeedItem(int si)
+{
+    speedItem = si;
+}
+
+void Player::setPowerItem(int pi)
+{
+    powerItem = pi;
+}
+
+void Player::setItems(int item, int idx)
+{
+    items[idx] = item;
+}
+
+void Player::setNumItems(int items)
+{
+    numItems = items;
+}
+
+void Player::setX(int row)
+{
+    x = row;
+}
+
+void Player::setY(int col)
+{
+    y = col;
+}
+
+// inventory represented by matrix
 void Player::inventory()
 {
-    cout << "" << endl;
-
     int invetoryCur = 0;
 
+    // row = category of item
+    // column = item rarity
+    cout << endl;
     for (int i = 0; i < 4; i++)
     {
         invetoryCur = invetoryCur + getItems(i);
-
-        if (i == 0)
+        if (i == 1) // bread
         {
             if (getItems(i) != 0)
             {
                 cout << getItems(i) << " slice(s) of bread" << endl;
             }
         }
-
-        if (i == 1)
-        {
-            if (getItems(i) != 0)
-            {
-                cout << getItems(i) << " candle(s)" << endl;
-            }
-        }
-
         if (i == 2)
         {
             if (getItems(i) == 1)
             {
-                cout << "- Standard Blade (Power level 1)" << endl;
+                cout << "- Pair of Nikes (Power level 1)" << endl;
             }
 
             if (getItems(i) == 2)
             {
-                cout << "- Dark Axe (Power level 2)" << endl;
+                cout << "- Green Homer Baby (Power level 2)" << endl;
             }
 
             if (getItems(i) == 3)
             {
-                cout << "- Emerald Flail (Power level 3)" << endl;
+                cout << "- Green Hair Dye (Power level 3)" << endl;
             }
         }
-
         if (i == 3)
         {
             if (getItems(i) == 1)
             {
-                cout << "- Combat Boots (Speed Level 2)" << endl;
+                cout << "- White Ferrari (Speed Level 1)" << endl;
             }
 
             if (getItems(i) == 2)
             {
-                cout << "- Enchanted Boots (Speed level 2)" << endl;
+                cout << "- Orange BMW E30 (Speed level 2)" << endl;
             }
         }
     }
@@ -158,210 +209,37 @@ void Player::inventory()
     }
 }
 
-void Player::setTheses(string win)
+// Increase player health. Move TMZ along map
+void Player::rest(int restChoice)
 {
-    theses = win;
-}
-
-void Player::setHealth(int a)
-{
-    health = a;
-}
-
-void Player::setHunger(int b)
-{
-    hunger = b;
-}
-
-void Player::setFood(int z)
-{
-    food = z;
-}
-
-void Player::setCandles(int c)
-{
-    candles = c;
-}
-
-void Player::setProgress(int e)
-{
-    progress = e;
-}
-
-void Player::setPlayerSpeed(int g)
-{
-    playerSpeed = g;
-}
-
-void Player::setPlayerPower(int i)
-{
-    playerPower = i;
-}
-
-// Player can have only one speed item at a time
-// depending on the integer that correlates with the item
-// the player speed will be increase depending on what item it is
-void Player::setSpeedItem(int h)
-{
-    speedItem = h;
-}
-
-// Player can have only one power item at a time
-// depending on the integer that correlates with the item
-// the player power will change depending on what item it is
-// power is used to defend against enemies that aren't the minotaur
-void Player::setPowerItem(int j)
-{
-    powerItem = j;
-}
-
-void Player::setItems(int ok, int idx)
-{
-    items[idx] = ok;
-}
-
-void Player::setNumItems(int bby)
-{
-    numItems = bby;
-}
-
-void Player::setX(int one)
-{
-    x = one;
-}
-
-void Player::setY(int two)
-{
-    y = two;
-}
-
-// player health recovers depending on how many hours player decides to rest.
-// player will be static
-// minotaur will still move
-void Player::rest(string restChoice)
-{
-    int current = getHealth();
-
-    if (restChoice == "1")
+    int currentHealth = getHealth();
+    int newHealth = currentHealth + restChoice * 10;
+    if (newHealth > 100)
     {
-        if (current >= 80)
-        {
-            setHealth(100);
-        }
-
-        else
-        {
-            setHealth(current + 20);
-        }
+        setHealth(100);
     }
-
-    if (restChoice == "2")
+    else
     {
-        if (current >= 70)
-        {
-            setHealth(100);
-        }
-
-        else
-        {
-            setHealth(current + 30);
-        }
-    }
-
-    if (restChoice == "3")
-    {
-        if (current >= 50)
-        {
-            setHealth(100);
-        }
-
-        else
-        {
-            setHealth(current + 50);
-        }
+        setHealth(newHealth);
     }
 }
 
-//option 3 in menu
 int Player::eat(int eatChoice)
 {
     int currentFood = getFood();
     int currentHunger = getHunger();
-
-    if (currentFood == 0)
+    if (currentFood < eatChoice)
     {
         return 0;
     }
-
+    int newHunger = currentHunger + eatChoice * 10;
+    if (newHunger > 100)
+    {
+        setHunger(100);
+    }
     else
     {
-
-        if (eatChoice == 1)
-        {
-            if (currentHunger >= 90)
-            {
-                setHunger(100);
-                setFood(currentFood - 1);
-                setItems(currentFood - 1, 0);
-                return 1;
-            }
-
-            else
-            {
-                setHunger(currentHunger + 10);
-                setFood(currentFood - 1);
-                setItems(currentFood - 1, 0);
-                return 1;
-            }
-        }
-
-        if (eatChoice == 2)
-        {
-            if (currentFood < 2)
-            {
-                return 2;
-            }
-
-            else if (currentHunger >= 80)
-            {
-                setHunger(100);
-                setFood(currentFood - 2);
-                setItems(currentFood - 2, 0);
-                return 1;
-            }
-
-            else
-            {
-                setHunger(currentHunger + 20);
-                setFood(currentFood - 2);
-                setItems(currentFood - 2, 0);
-                return 1;
-            }
-        }
-
-        if (eatChoice == 3)
-        {
-            if (currentFood < 3)
-            {
-                return 2;
-            }
-
-            else if (currentHunger >= 70)
-            {
-                setHunger(100);
-                setFood(currentFood - 3);
-                setItems(currentFood - 3, 0);
-                return 1;
-            }
-
-            else
-            {
-                setHunger(currentHunger + 30);
-                setFood(currentFood - 3);
-                setItems(currentFood - 3, 0);
-                return 1;
-            }
-        }
+        setHunger(newHunger);
     }
-    return -1;
+    return 1;
 }

@@ -1,44 +1,41 @@
 #include "enemy.h"
-#include "labyrinth.h"
+#include "map.h"
 #include <ctime>
 using namespace std;
 
-void Enemy::setLabyrinth(Labyrinth ok)
+void Enemy::setMap(Map mapObj)
 {
-    l = ok;
+    m = mapObj;
 }
 
-//enemy function that returns integer based on decision made by user and monster randomly generated
+// returns integer based on decision made by user and enemey
 int Enemy::encounter()
 {
     srand(time(NULL));
-
     int x = (rand() % 10);
-
+    int choiceMade = false;
     if (x >= 0 && x <= 5)
     {
-        int trigger = 0;
-        while (trigger != 1)
+        while (choiceMade != true)
         {
             cout << endl
-                 << "YOU HAVE ENCOUNTERED A GOBLIN" << endl
-                 << "1. Fight?" << endl
-                 << "2. Run?" << endl;
+                 << "A WILD CHRIS BROWN APPEARS" << endl
+                 << "1. Throw hands" << endl
+                 << "2. Run away" << endl;
             string choice;
             cin >> choice;
-
+            if (choice == "1" || choice == "2")
+            {
+                choiceMade = true;
+            }
             if (choice == "1")
             {
                 return 11;
-                trigger = 1;
             }
-
             if (choice == "2")
             {
                 return 12;
-                trigger = 1;
             }
-
             else
             {
                 // user error
@@ -46,32 +43,29 @@ int Enemy::encounter()
             }
         }
     }
-
     if (x > 5 && x <= 8)
     {
-        int trigger2 = 0;
-
-        while (trigger2 != 1)
+        while (choiceMade != true)
         {
             cout << endl
-                 << "YOU HAVE ENCOUNTERED A GORGON" << endl
-                 << "1. Fight?" << endl
-                 << "2. Run?" << endl;
+                 << "A WILD TYLER THE CREATOR APPEARS" << endl
+                 << "1. Throw hands" << endl
+                 << "2. Ignore him and run" << endl;
             string choice2;
             cin >> choice2;
-
+            if (choice2 == "1" || choice2 == "2")
+            {
+                choiceMade = true;
+            }
             if (choice2 == "1")
             {
                 return 21;
-                trigger2 = 1;
             }
 
             if (choice2 == "2")
             {
                 return 22;
-                trigger2 = 1;
             }
-
             else
             {
                 // user error
@@ -79,32 +73,28 @@ int Enemy::encounter()
             }
         }
     }
-
     if (x == 9)
     {
-        int trigger3 = 0;
-
-        while (trigger3 != 1)
+        while (choiceMade != true)
         {
             cout << endl
-                 << "YOU HAVE ENCOUNTERED A CYCLOPS" << endl
-                 << "1. fight?" << endl
-                 << "2. run?" << endl;
+                 << "MOM JUST CALLED" << endl
+                 << "1. Listen to her rant about being yourself" << endl
+                 << "2. Hang up and keep running" << endl;
             string choice3;
             cin >> choice3;
-
+            if (choice3 == "1" || choice3 == "2")
+            {
+                choiceMade = true;
+            }
             if (choice3 == "1")
             {
                 return 31;
-                trigger3 = 1;
             }
-
             if (choice3 == "2")
             {
                 return 32;
-                trigger3 = 1;
             }
-
             else
             {
                 //user error
@@ -112,6 +102,5 @@ int Enemy::encounter()
             }
         }
     }
-
     return -1;
 }
