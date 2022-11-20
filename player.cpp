@@ -16,7 +16,7 @@ Player::Player()
     x = 0;
     y = 0;
     theses = "";
-    
+
     for (int m = 0; m < 5; m++)
     {
         items[m] = 0;
@@ -97,22 +97,21 @@ int Player::getY()
 void Player::inventory()
 {
     cout << "" << endl;
-    
+
     int invetoryCur = 0;
-    
+
     for (int i = 0; i < 4; i++)
     {
         invetoryCur = invetoryCur + getItems(i);
-        
+
         if (i == 0)
         {
             if (getItems(i) != 0)
             {
                 cout << getItems(i) << " slice(s) of bread" << endl;
             }
-            
         }
-        
+
         if (i == 1)
         {
             if (getItems(i) != 0)
@@ -120,46 +119,45 @@ void Player::inventory()
                 cout << getItems(i) << " candle(s)" << endl;
             }
         }
-        
+
         if (i == 2)
         {
             if (getItems(i) == 1)
             {
                 cout << "- Standard Blade (Power level 1)" << endl;
             }
-            
+
             if (getItems(i) == 2)
             {
                 cout << "- Dark Axe (Power level 2)" << endl;
             }
-            
+
             if (getItems(i) == 3)
             {
                 cout << "- Emerald Flail (Power level 3)" << endl;
             }
         }
-        
+
         if (i == 3)
         {
             if (getItems(i) == 1)
             {
                 cout << "- Combat Boots (Speed Level 2)" << endl;
             }
-            
+
             if (getItems(i) == 2)
             {
                 cout << "- Enchanted Boots (Speed level 2)" << endl;
             }
-
         }
     }
-    
+
     if (invetoryCur == 0)
     {
         cout << "No items in inventory" << endl;
     }
 }
-    
+
 void Player::setTheses(string win)
 {
     theses = win;
@@ -217,7 +215,6 @@ void Player::setPowerItem(int j)
     powerItem = j;
 }
 
-
 void Player::setItems(int ok, int idx)
 {
     items[idx] = ok;
@@ -243,49 +240,46 @@ void Player::setY(int two)
 // minotaur will still move
 void Player::rest(string restChoice)
 {
-        int current = getHealth();
-        
-        if (restChoice == "1")
+    int current = getHealth();
+
+    if (restChoice == "1")
+    {
+        if (current >= 80)
         {
-            if (current >= 80)
-            {
-                setHealth(100);
-            }
-            
-            else
-            {
-                setHealth(current + 20);
-            }
-            
+            setHealth(100);
         }
-        
-        if (restChoice == "2")
+
+        else
         {
-            if (current >= 70)
-            {
-                setHealth(100);
-            }
-            
-            else
-            {
-               setHealth(current + 30); 
-            }
-            
+            setHealth(current + 20);
         }
-        
-        if (restChoice == "3")
+    }
+
+    if (restChoice == "2")
+    {
+        if (current >= 70)
         {
-            if (current >= 50)
-            {
-                setHealth(100);
-            }
-            
-            else
-            {
-                setHealth(current + 50);
-            }
-            
+            setHealth(100);
         }
+
+        else
+        {
+            setHealth(current + 30);
+        }
+    }
+
+    if (restChoice == "3")
+    {
+        if (current >= 50)
+        {
+            setHealth(100);
+        }
+
+        else
+        {
+            setHealth(current + 50);
+        }
+    }
 }
 
 //option 3 in menu
@@ -293,81 +287,81 @@ int Player::eat(int eatChoice)
 {
     int currentFood = getFood();
     int currentHunger = getHunger();
-        
+
     if (currentFood == 0)
     {
         return 0;
     }
-    
-    else {
-        
-    if (eatChoice == 1)
-    {
-        if (currentHunger >= 90)
-        {
-            setHunger(100);
-            setFood(currentFood - 1);
-            setItems(currentFood - 1, 0);
-            return 1;
-        }
-                
-        else
-        {
-            setHunger(currentHunger + 10);
-            setFood(currentFood - 1);
-            setItems(currentFood - 1, 0);
-            return 1;
-        }
-    }
-            
-    if (eatChoice == 2)
-    {
-        if (currentFood < 2)
-        {
-           return 2;
-        }
-                
-        else if (currentHunger >= 80)
-        {
-            setHunger(100);
-            setFood(currentFood - 2);
-            setItems(currentFood - 2, 0);
-            return 1;
-        }
-                
-        else
-        {
-            setHunger(currentHunger + 20);
-            setFood(currentFood - 2);
-            setItems(currentFood - 2, 0);
-            return 1;
-        }
-    }
-            
-    if (eatChoice == 3)
-    {
-        if (currentFood < 3)
-        {
-            return 2;
-        }
-                
-        else if (currentHunger >= 70)
-        {
-            setHunger(100);
-            setFood(currentFood - 3);
-            setItems(currentFood - 3, 0);
-            return 1;
-        }
-                
-        else
-        {
-            setHunger(currentHunger + 30);
-            setFood(currentFood - 3);
-            setItems(currentFood - 3, 0);
-            return 1;
-        }
-    }
 
+    else
+    {
+
+        if (eatChoice == 1)
+        {
+            if (currentHunger >= 90)
+            {
+                setHunger(100);
+                setFood(currentFood - 1);
+                setItems(currentFood - 1, 0);
+                return 1;
+            }
+
+            else
+            {
+                setHunger(currentHunger + 10);
+                setFood(currentFood - 1);
+                setItems(currentFood - 1, 0);
+                return 1;
+            }
+        }
+
+        if (eatChoice == 2)
+        {
+            if (currentFood < 2)
+            {
+                return 2;
+            }
+
+            else if (currentHunger >= 80)
+            {
+                setHunger(100);
+                setFood(currentFood - 2);
+                setItems(currentFood - 2, 0);
+                return 1;
+            }
+
+            else
+            {
+                setHunger(currentHunger + 20);
+                setFood(currentFood - 2);
+                setItems(currentFood - 2, 0);
+                return 1;
+            }
+        }
+
+        if (eatChoice == 3)
+        {
+            if (currentFood < 3)
+            {
+                return 2;
+            }
+
+            else if (currentHunger >= 70)
+            {
+                setHunger(100);
+                setFood(currentFood - 3);
+                setItems(currentFood - 3, 0);
+                return 1;
+            }
+
+            else
+            {
+                setHunger(currentHunger + 30);
+                setFood(currentFood - 3);
+                setItems(currentFood - 3, 0);
+                return 1;
+            }
+        }
     }
     return -1;
 }
