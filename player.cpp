@@ -209,7 +209,7 @@ void Player::inventory()
     }
 }
 
-// Increase player health. Move TMZ along map
+// Increase player health and move TMZ along map
 void Player::rest(int restChoice)
 {
     int currentHealth = getHealth();

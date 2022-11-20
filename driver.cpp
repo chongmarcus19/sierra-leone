@@ -83,7 +83,6 @@ int main()
         else
         {
             srand(time(NULL)); // set random seeding
-
             cout << endl
                  << "What will you do next?" << endl
                  << "1. Keep Moving" << endl

@@ -8,7 +8,7 @@ void Enemy::setMap(Map mapObj)
     m = mapObj;
 }
 
-// returns integer based on decision made by user and enemey
+// returns integer based on decision made by user and enemy
 int Enemy::encounter()
 {
     srand(time(NULL));

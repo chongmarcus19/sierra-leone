@@ -17,5 +17,4 @@ private:
     int speed;
     int progress;
 };
-
 #endif

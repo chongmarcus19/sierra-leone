@@ -66,5 +66,4 @@ private:
 
     string same(string);
 };
-
 #endif

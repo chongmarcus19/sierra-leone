@@ -4,7 +4,7 @@ using namespace std;
 Tmz::Tmz()
 {
     speed = 2;
-    progress = -10; // starting position, giving player a headstart
+    progress = -10; // starting position giving player a headstart
 }
 
 int Tmz::getSpeed()
