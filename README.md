@@ -8,3 +8,9 @@ Survival game inspired by R&B artist Frank Ocean, utilizes object-oriented princ
 
 ## Screenshots
 <img src="screenshots/Screen Shot 2022-11-20 at 4.07.37 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.18.29 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.11.33 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.12.22 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.12.46 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.13.05 PM.png">
+<img src="Screen Shot 2022-11-20 at 4.13.41 PM.png">
