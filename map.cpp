@@ -83,7 +83,7 @@ void Map::displayMap()
 {
     cout << endl
          << "PROGRESS" << endl
-         << "P = you, T = tmz" << endl
+         << "F = you, T = tmz" << endl
          << "----------" << endl;
     for (int i = 0; i < 10; i++)
     {
