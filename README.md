@@ -1,8 +1,8 @@
 # Liberation: Minotaur
-A dynamic interactive survival game inspired by the Greek tale of Theseus and the Minotaur utilizing object-oriented programming in C++. Game incorporates a live map and randomly generated events.
+Survival game inspired by the Greek tale of Theseus and the Minotaur utilizing object-oriented programming principles in C++. Game incorporates a live map and randomly generated events.
 
 ## How to Play
-Run the driver file in an ide and play the game through the terminal
+Run driver file in ide and play game through terminal
 
 ## The Game
 - The player's goal is to reach the end of the maze
