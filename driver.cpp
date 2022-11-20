@@ -18,8 +18,8 @@ int main()
          << "You are famous R&B artist Frank Ocean." << endl
          << endl
          << "Mysteriously, you wake up in the middle of a desert with no phone." << endl
-         << "In the distance, you see TMZ in the distance running towards you! How did they even find you?" << endl
-         << "You hear them begging for a new album in the distance." << endl
+         << "In the distance, you see TMZ in the distance running towards you!" << endl
+         << "You hear them begging for a new album." << endl
          << "You have no choice but to turn and sprint the other way!" << endl
          << endl
          << "your main objective is to ESCAPE!" << endl
